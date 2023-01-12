@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 115vh;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .task-container {
+    /* width: 1000px; */
+    width: 100%;
+    min-height: 650px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 170px;
+    /* right: 18px; */
+  }
+  
+  
+  #open,
+  #in-progress,
+  #in-review,
+  #done{
+    margin: 12.5px;
+    left: 10px; 
+    height: auto;
+    padding-bottom: 140px;
+    border-radius: 25px;
+  }
+  
+  h3 {
+    border-radius: 25px 25px 0 0;
+  }
+  /* #done {
+    margin-left: 12.5px;
+    height: auto;
+    top: 11.6px; 
+    left: 10px;
+   } */
+  
+  .status {
+    width: 25%;
+    background-color: #f3f3f3;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+  }
+  
+  .status:nth-child(even) {
+    background-color: #e9e9e96b;
+  }
+  
+  .status h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #343434;
+    color: #f3f3f3;
+    margin: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  
+  #add-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #add-btn:hover {
+    background-color: #aaa;
+  }
+  
+  .task {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    background-color: #fff;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+      rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    /* padding: 0.5rem 1rem; */
+    font-size: 1.35rem;
+    /* margin: 0.5rem 0; */
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    line-height: 0;
+  }
+  
+  .close {
+    position: relative;
+    /* right: 0; */
+    top: 2px;
+    width: auto;
+    height: auto;
+    margin-bottom: auto;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .task:hover,
+  .close:hover {
+    color: #343444;
+  }
+  
+  /* modal */
+  
+  .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+  
+  .modal {
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+  }
+  
+  .modal.active {
+    left: 50%;
+    top: 50%;
+  }
+  
+  .modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .modal .modal-body {
+    padding: 0.75rem;
+  }
+  
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  #overlay.active {
+    display: block; 
+  }
+  
+  #task-input
+   {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+  }
+  
+  #task-submit {
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 25%;
+    margin: 0.25rem;
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    float: right;
+  }
+  
+  
+  
+  #header-area {
+    top: 0;
+    height: 40px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: lightblue;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* bottom: 94%; */
+  }
+  
+  #heading {
+    margin-left: 950px;
+  }
+  
+  
+  .no-outline {
+    position: absolute;
+    bottom: 88%;
+    border: hidden;
+    border-radius: 5px;
+    height: 5%;
+    box-shadow: 5px 10px 5px lightgrey;
+    /* border-right: hidden; */
+  }
+  
+  .no-outline:hover {
+    background-color: whitesmoke;
+  }
+   
+  #task-name {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+  }
+  
+  #task-description {
+    /* border-style: bolder; */
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  
+  #task-heading-task {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    /* background-color: antiquewhite; */
+    padding-top: 10px;
+    align-items: center;
+  }
+  
+  #description {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    /* background-color: yellow; */
+  }

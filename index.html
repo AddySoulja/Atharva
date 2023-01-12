@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="App.js"></script>
+    <title>Task Manager App</title>
+  </head>
+  <body>
+
+    <header id="header-area">
+      <div id="heading">Task Manager App</div>
+    </header>
+
+    <div class="new-task">
+      <span id="input-task" type="text" class="no-outline" data-target-modal="#task-form">+ Add a new task...</span>
+       <!-- <button id="submit" type="submit">Add task</button>     -->
+    </div> 
+
+    <!-- modal -->
+    <div class="modal" id="task-form">
+      <div class="modal-header">
+        <div class="title">Create a new task</div>
+        <button class="btn close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- <input type="text" id="task-input" />  -->
+        
+        <label for="task-name">Task Name :</label><br>
+          <input type="text" id="task-name" placeholder=" Task name..."><br><br>
+          <label for="task-desc">Task Description :</label>
+        <textarea id="task-description" rows="8" cols="55" placeholder=" Task description..."></textarea> 
+        <button type="button" id="task-submit">Add task</button>
+      </div>
+    </div>
+    <!-- task -->
+    <div class="task-container">
+      <div class="status in-progress" id="open">
+        <h3>Open</h3>
+        <!-- <button id="add-btn" data-target-modal="#task-form">+ add a task</button> -->
+<!-- 
+        <div class="task" >
+
+          <div id="task-heading-task">
+            My Task
+            <div class="close">&times;</div>
+          </div>
+
+          <div id="description">
+            My description
+          </div>
+
+        </div>
+
+ -->
+
+      </div>
+      <div class="status in-review" id="in-progress">
+      <h3>In Progress</h3>
+      </div>
+      <div class="status done" id="in-review">
+        <h3>In Review</h3>
+      </div>
+      <div class="status" id="done">
+        <h3>Done</h3>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+  </body>
+</html>
+
